@@ -70,3 +70,4 @@ scan.close();
 
 
 //adicionar numero.add enquanto esc1 for igual a 1, senão voltar para menu
+//asdfadfad
