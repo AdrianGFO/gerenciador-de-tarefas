@@ -34,9 +34,10 @@ public static int num1(){
                     System.out.println("qual numero adicionar?");
                     int n = scan.nextInt();
                     numero.add(n);
-                }else {
+                }else if (esc2 == 2){
                     y++;
-
+                }else{
+                    System.out.println("Opção inexistente.");
                 }
             }
         }

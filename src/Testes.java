@@ -2,12 +2,12 @@ import java.util.Scanner;
 import java.util.ArrayList;
 public class Testes {
     public static void main(String[] args) {
-        int menu;
+        /**     int menu;
         int esc1, esc2;
         int y = 0;
         Scanner scan = new Scanner(System.in);
 
-    /**  System.out.println("1 - Adicionar Tarefa\n2 - Lista de Tarefas\n3 - Editar Tarefa\n4 - Excluir Tarefa\n5 - Sair");
+      System.out.println("1 - Adicionar Tarefa\n2 - Lista de Tarefas\n3 - Editar Tarefa\n4 - Excluir Tarefa\n5 - Sair");
     menu = scan.nextInt();
        switch(menu){
            case 1:
@@ -30,7 +30,7 @@ public class Testes {
 
         }*/
 
-       ArrayList<Integer> numero = new ArrayList<Integer>();
+  /**     ArrayList<Integer> numero = new ArrayList<Integer>();
         do{ System.out.println("Atual lista:\n___________________________________");
 
         for (int i = 0; i < numero.size(); i++) {
@@ -64,10 +64,40 @@ public class Testes {
           }
                   }while(esc1 == 1);
 
+
+
+
+*/
+
+Scanner scan = new Scanner(System.in);
+
+        ArrayList<String> nome = new ArrayList<String>();
+
+        nome.add("Carlos");
+        nome.add("Adrian");
+        nome.add("Alex");
+        nome.add("Jhonathan");
+
+        System.out.println("___________________________________________________________");
+        for (int i = 0; i < nome.size(); i++) {
+            System.out.println(nome.get(i));
+        }
+        System.out.println("___________________________________________________________");
+
+        System.out.println("gostaria de alterar algum? (1 - SIM 2 - NÃO)");
+        int a = scan.nextInt();
+        if(a == 1){
+            System.out.println("Qual deseja alterar: ");
+            int b = scan.nextInt();
+            System.out.println("Novo nome: ");
+            String c = scan.next();
+            nome.set(b-1, c);
+
+            System.out.println("Lista Atual: " + nome);
+        }else;
+
+
+
 scan.close();
     }
 }
-
-
-//adicionar numero.add enquanto esc1 for igual a 1, senão voltar para menu
-//asdfadfad
