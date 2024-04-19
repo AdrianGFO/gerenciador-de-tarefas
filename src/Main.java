@@ -18,7 +18,7 @@ public class Main {
                    Crud.num1();
                 }else if(resp2 == 2){System.out.println("Entendo... Foi uma prazer servi-lo.");}
                 else{System.out.println("Não existe essa opção.\n\n");}
-            }while(resp2 != 1 && resp2 != 2);
+            }while(resp2 != 0);
         }
 
     private static void num1() {
