@@ -69,7 +69,7 @@ public class Testes {
 
 */
 
-Scanner scan = new Scanner(System.in);
+/**Scanner scan = new Scanner(System.in);
 
         ArrayList<String> nome = new ArrayList<String>();
 
@@ -98,6 +98,16 @@ Scanner scan = new Scanner(System.in);
 
 
 
+scan.close();*/
+
+Scanner scan = new Scanner(System.in);
+String a;
+        System.out.println("Digite algo: ");
+a = scan.next();
+
+        System.out.println("você digitou: " + a);
+
 scan.close();
+
     }
 }

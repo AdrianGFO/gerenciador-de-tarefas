@@ -1,26 +1,75 @@
+/**
+ Mudar nome do arraylist de nome para tarefas.
+ */
+
+
+
+
+
+
+
+
+
 import java.util.ArrayList;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 //______________VARIÁVEIS________________
 
-            int resp2, menu;
-            Scanner scan = new Scanner(System.in);
+        int menu;
+        Scanner scan = new Scanner(System.in);
+        ArrayList<String> nome = new ArrayList<String>();
 
 //______________VARIÁVEIS________________
-            ArrayList<Integer> numero = new ArrayList<Integer>();
+        do {System.out.println("1 - Adicionar Tarefa\n2 - Lista de Tarefas\n3 - Editar Tarefa\n4 - Remover Tarefa\n5 - Sair");
+            menu = scan.nextInt();
+            switch (menu) {
+                case 1:
+                    scan.nextLine();
 
-            do{System.out.println("Olá, Seja bem vindo ao seu Gerenciador de Tarefas");
-                System.out.println("Gostaria de começar adicionando uma Tarefa?\n1 - SIM\n2 - NÃO");
-                resp2 = scan.nextInt();
+                    int adtask;
+                    do {System.out.println("qual Tarefa adicionar?");
+                        String n = scan.nextLine();
+                        nome.add(n);
+                        System.out.println("Gostaria de adicionar mais um?\n1 - Sim\n2 - Não");
+                        adtask = scan.nextInt();
+                        scan.nextLine();
+                    }while(adtask == 1);
+                    break;
+                case 2:
+                    System.out.println("________________________________________________________________________________________________\nLista:\n\n");
+                    for (int i=0; i<nome.size(); i++) {
+                        System.out.println((i + 1)+" - " + nome.get(i));
+                    }
+                    System.out.println("_________________________________________________________________________________________________");
+                    break;
+                case 3:
+                    System.out.println("Qual deseja alterar: ");
+                    int b = scan.nextInt();
+                    scan.nextLine();
+                    System.out.println("Nova Tarefa: ");
+                    String c = scan.nextLine();
+                    nome.set(b-1, c);
 
-                if(resp2 == 1){
-                   Crud.num1();
-                }else if(resp2 == 2){System.out.println("Entendo... Foi uma prazer servi-lo.");}
-                else{System.out.println("Não existe essa opção.\n\n");}
-            }while(resp2 != 0);
-        }
+                    System.out.println("Tarefa Editada");
+                    break;
+                case 4:
+                    int deltask;
+                    System.out.println("Lista: ");
+                    for (int i=0; i<nome.size(); i++) {
+                        System.out.println((i + 1)+" - " + nome.get(i));
+                    }
+                    System.out.println("Qual você deseja apagar: ");
+                    deltask = scan.nextInt();
+                    nome.remove(deltask-1);
+                    break;
+                case 5:
+                    System.out.println("Você escolheu sair");
+                    break;
+            }
 
-    private static void num1() {
+        }while(menu != 5);
+
+        scan.close();
     }
 }
