@@ -1,5 +1,7 @@
+import javax.swing.*;
 import java.util.Scanner;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 public class Testes {
     public static void main(String[] args) {
         /**     int menu;
@@ -100,14 +102,10 @@ public class Testes {
 
 scan.close();*/
 
+int menu;
 Scanner scan = new Scanner(System.in);
-String a;
-        System.out.println("Digite algo: ");
-a = scan.next();
-
-        System.out.println("você digitou: " + a);
-
-scan.close();
-
+        JOptionPane.showInputDialog("1 - Adicionar Tarefa\n2 - Lista de Tarefas\n3 - Editar Tarefa\n4 - Remover Tarefa\n5 - Sair");
+        menu = scan.nextInt();
+        JOptionPane.showMessageDialog(null, menu);
     }
 }
