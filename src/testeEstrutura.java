@@ -1,63 +1,55 @@
+/**
+ mudar tudo da main por métodos
+ colocar um banco de dados
+ */
+
 import java.util.ArrayList;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
+
 public class testeEstrutura {
     public static void main(String[] args) {
-//______________VARIÁVEIS________________
-
         int menu;
         Scanner scan = new Scanner(System.in);
         ArrayList<String> tarefas = new ArrayList<String>();
+        StringBuilder listaFormatada = new StringBuilder();
 
-//______________VARIÁVEIS________________
-        do {System.out.println("1 - Adicionar Tarefa\n2 - Lista de Tarefas\n3 - Editar Tarefa\n4 - Remover Tarefa\n5 - Sair");
-            menu = scan.nextInt();
+        do {
+            menu = Integer.parseInt(JOptionPane.showInputDialog("1 - Adicionar Tarefa\n2 - Lista de Tarefas\n3 - Editar Tarefa\n4 - Remover Tarefa\n5 - Sair"));
             switch (menu) {
                 case 1:
-                    scan.nextLine();
-
                     int adtask;
-                    do {System.out.println("qual Tarefa adicionar?");
-                        String n = scan.nextLine();
+                    do {
+                        String n = JOptionPane.showInputDialog("Qual tarefa adicionar?");
                         tarefas.add(n);
-                        System.out.println("Gostaria de adicionar mais um?\n1 - Sim\n2 - Não");
-                        adtask = scan.nextInt();
-                        scan.nextLine();
-                    }while(adtask == 1);
+                        adtask = Integer.parseInt(JOptionPane.showInputDialog("Gostaria de adicionar mais uma?\n1 - Sim\n2 - Não"));
+                    } while (adtask == 1);
                     break;
                 case 2:
-                    System.out.println("________________________________________________________________________________________________\nLista:\n\n");
-                    for (int i=0; i<tarefas.size(); i++) {
-                        System.out.println((i + 1)+" - " + tarefas.get(i));
+                    listaFormatada.setLength(0); // Limpar o conteúdo anterior
+                    // Adiciona os itens formatados à string
+                    for (int i = 0; i < tarefas.size(); i++) {
+                        listaFormatada.append((i + 1)).append(" - ").append(tarefas.get(i)).append("\n");
                     }
-                    System.out.println("_________________________________________________________________________________________________");
+                    // Exibe a lista formatada em uma caixa de diálogo JOptionPane
+                    JOptionPane.showMessageDialog(null, listaFormatada.toString());
                     break;
                 case 3:
-                    System.out.println("Qual deseja alterar: ");
-                    int b = scan.nextInt();
-                    scan.nextLine();
-                    System.out.println("Nova Tarefa: ");
-                    String c = scan.nextLine();
-                    tarefas.set(b-1, c);
-
-                    System.out.println("Tarefa Editada");
+                    int b = Integer.parseInt(JOptionPane.showInputDialog(listaFormatada.toString() + "Qual deseja alterar: "));
+                    String c = JOptionPane.showInputDialog("Nova Tarefa:");
+                    tarefas.set(b - 1, c);
+                    JOptionPane.showMessageDialog(null, "Tarefa Editada");
                     break;
                 case 4:
-                    int deltask;
-                    System.out.println("Lista: ");
-                    for (int i=0; i<tarefas.size(); i++) {
-                        System.out.println((i + 1)+" - " + tarefas.get(i));
-                    }
-                    System.out.println("Qual você deseja apagar: ");
-                    deltask = scan.nextInt();
-                    tarefas.remove(deltask-1);
+                    int deltask = Integer.parseInt(JOptionPane.showInputDialog(listaFormatada.toString() + "Qual deseja apagar: "));
+                    tarefas.remove(deltask - 1);
                     break;
                 case 5:
-                    System.out.println("Você escolheu sair");
+                    JOptionPane.showMessageDialog(null, "Fechando...");
                     break;
             }
 
-        }while(menu != 5);
+        } while(menu != 5);
 
         scan.close();
     }
