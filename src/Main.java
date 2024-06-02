@@ -1,6 +1,9 @@
 /**
- mudar tudo da main por métodos
- colocar um banco de dados
+ -caso seja igual null voltar ao começo(se n receber nenhuma resposta).
+
+ -mudar tudo da main por métodos.
+
+ -colocar um banco de dados.
  */
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -28,7 +31,7 @@ public class Main {
                     listaFormatada.setLength(0); // Limpar o conteúdo anterior
                     // Adiciona os itens formatados à string
                     for (int i = 0; i < tarefas.size(); i++) {
-                        listaFormatada.append((i + 1)).append(" - ").append(tarefas.get(i)).append("\n");
+                        listaFormatada.append((i + 1)).append(" - ").append(tarefas.get(i).toLowerCase()).append("\n");
                     }
                     // Exibe a lista form atada em uma caixa de diálogo JOptionPane
                     JOptionPane.showMessageDialog(null, listaFormatada.toString());
