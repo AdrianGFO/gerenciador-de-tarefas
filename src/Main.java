@@ -28,13 +28,13 @@ public class Main {
                     listaFormatada.setLength(0); // Limpar o conteúdo anterior
                     // Adiciona os itens formatados à string
                     for (int i = 0; i < tarefas.size(); i++) {
-                        listaFormatada.append((i + 1)).append(" - ").append(tarefas.get(i)).append("\n");
+                        listaFormatada.append((i + 1)).append(" - ").append(tarefas.get(i).toLowerCase()).append("\n");
                     }
                     // Exibe a lista form atada em uma caixa de diálogo JOptionPane
                     JOptionPane.showMessageDialog(null, listaFormatada.toString());
                     break;
                 case 3:
-                    int b = Integer.parseInt(JOptionPane.showInputDialog(listaFormatada.toString() + "Qual deseja alterar: "));
+                    int b = Integer.parseInt(JOptionPane.showInputDialog(listaFormatada.toString() + "\nQual deseja alterar: "));
                     String c = JOptionPane.showInputDialog("Nova Tarefa:");
                     tarefas.set(b - 1, c);
                     JOptionPane.showMessageDialog(null, "Tarefa Editada");
@@ -47,7 +47,7 @@ public class Main {
                     JOptionPane.showMessageDialog(null, "Fechando...");
                     break;
             }
-
+//oi
         } while(menu != 5);
 
         scan.close();
